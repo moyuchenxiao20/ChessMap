@@ -1,0 +1,2648 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Auto Chess Evolution Dependency Map</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+
+</head>
+<body>
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Auto Chess Evolution Dependency Map" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Auto Chess Evolution Dependency Map&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 16px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans:
+    -apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;,
+    Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;,
+    &quot;Segoe UI Symbol&quot;;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 8px);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-weight: var(--font-weight-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  font-weight: inherit;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 8px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget &gt; :not(.card, .widget, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  border: 1px solid var(--border);
+  corner-shape: var(--corner-shape);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.btn-primary {
+  border-color: var(--border);
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: border-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: border-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(&gt; .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel &gt; [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel &gt; [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker &gt; summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-picker &gt; summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls &gt; button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker &gt; summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls &gt; button &gt; svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls &gt; button::before,
+.viz-carousel-picker &gt; summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: &quot;&quot;;
+  pointer-events: none;
+}
+
+.viz-carousel-controls &gt; button:hover::before,
+.viz-carousel-picker &gt; summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker &gt; summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker &gt; summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options &gt; button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options &gt; [aria-current=&quot;true&quot;],
+.viz-carousel-options &gt; button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type=&quot;file&quot;],
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;],
+  [type=&quot;color&quot;]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;]
+) {
+  padding-inline: var(--control-spacing, 12px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+  padding: 0;
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid=&quot;true&quot;] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  margin: 0;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
+  background-position:
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
+  cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select option {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.form-select:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
+}
+
+.form-check {
+  display: flex;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  corner-shape: round;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: &quot;&quot;;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;radio&quot;]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;radio&quot;]:disabled
+  + .form-check-label {
+  opacity: 0.5;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--blue);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--primary);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+
+.form-range::-moz-range-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+.form-range:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--blue);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(&gt; .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker &gt; summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type=&quot;file&quot;],
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;week&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;color&quot;]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;
+&lt;div id=&quot;pork-net-root&quot;&gt;
+  &lt;style&gt;
+    #pork-net-root{color:var(--foreground);font-family:inherit}
+    #pork-net-root h3{margin:0 0 4px;font-weight:500}
+    #pork-net-root .hint{margin:0 0 10px;color:var(--muted-foreground)}
+    #pork-net-root .chart{position:relative}
+    #pork-net-root .edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+    #pork-net-root .row{position:relative;z-index:2;display:grid;gap:8px}
+    #pork-net-root .head{margin-bottom:6px}
+    #pork-net-root .corner{padding:8px 6px;color:var(--muted-foreground)}
+    #pork-net-root .phase{padding:8px 5px;text-align:center;border-left:2px solid var(--foreground);font-weight:500}
+    #pork-net-root .phase span{display:block;margin-top:3px;color:var(--muted-foreground);font-weight:400}
+    #pork-net-root .lane{padding:12px 0;border-top:1px solid var(--border);align-items:start}
+    #pork-net-root .lane-label{padding:7px 6px;font-weight:500}
+    #pork-net-root .lane-label span{display:block;margin-top:3px;color:var(--muted-foreground);font-weight:400}
+    #pork-net-root .slot{display:flex;flex-direction:column;gap:7px;min-width:0}
+    #pork-net-root .node{position:relative;z-index:3;appearance:none;width:100%;min-height:46px;padding:7px 8px;border:0;border-radius:7px;background:var(--muted);color:var(--foreground);font:inherit;text-align:left;line-height:1.3}
+    #pork-net-root .node[data-lane=&quot;B&quot;]{background:color-mix(in srgb,var(--viz-series-2) 14%,var(--card))}
+    #pork-net-root .node[data-lane=&quot;C&quot;]{background:color-mix(in srgb,var(--viz-series-3) 14%,var(--card))}
+    #pork-net-root .node[data-lane=&quot;D&quot;]{background:color-mix(in srgb,var(--viz-series-4) 14%,var(--card))}
+    #pork-net-root .node[data-lane=&quot;E&quot;]{background:color-mix(in srgb,var(--viz-series-5) 14%,var(--card))}
+    #pork-net-root .node strong{display:block;font-weight:500}
+    #pork-net-root .node.is-hidden{opacity:0;pointer-events:none}
+    #pork-net-root .node.is-selected{outline:2px solid var(--foreground);outline-offset:2px}
+    #pork-net-root .edge{fill:none;stroke:var(--muted-foreground);stroke-width:1.15;opacity:.38;marker-end:url(#pork-arrow)}
+    #pork-net-root .edge.is-hidden{opacity:0}
+    #pork-net-root .focus-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;color:var(--muted-foreground)}
+    @media(max-width:700px){
+      #pork-net-root .row{gap:4px}
+      #pork-net-root .node{padding:5px 4px;min-height:40px;font-size:11px}
+      #pork-net-root .phase span,#pork-net-root .lane-label span{display:none}
+    }
+  &lt;/style&gt;
+  &lt;h3&gt;自走棋 Like&lt;/h3&gt;
+  &lt;p class=&quot;hint text-small&quot;&gt;横向为首次建立阶段与依赖层，纵向是 B–E 能力轨道；点击查看其完整链路。&lt;/p&gt;
+  &lt;div class=&quot;focus-bar text-small&quot;&gt;&lt;span id=&quot;pork-focus-text&quot;&gt;点击任一节点，只查看它所在的完整上下游链路。&lt;/span&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-ghost&quot; id=&quot;pork-reset&quot; hidden&gt;显示全部&lt;/button&gt;&lt;/div&gt;
+  &lt;div class=&quot;chart&quot; id=&quot;pork-chart&quot; role=&quot;img&quot; aria-label=&quot;自走棋五阶段能力出生与关键依赖网络&quot;&gt;
+    &lt;svg class=&quot;edges&quot; id=&quot;pork-edges&quot; aria-hidden=&quot;true&quot;&gt;&lt;/svg&gt;
+    &lt;div id=&quot;pork-content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+  (()=&gt;{
+    const data={&quot;rows&quot;:[{&quot;id&quot;:&quot;B1&quot;,&quot;name&quot;:&quot;战斗演算框架&quot;,&quot;key&quot;:&quot;单位实体、状态机、目标选择、移动、普攻、能量、技能、Action、Buff、战斗公式、死亡、超时、胜负&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立单场战斗核心；◇预留属性修正、阵容来源、对手来源接口&quot;,&quot;▲ 接入升星、羁绊、站位、满星大招&quot;,&quot;▲ 接入局外属性、真人/AI和权威结果&quot;,&quot;■ 性能、稳定性、教学战斗和批量内容验证&quot;,&quot;▲ 复用于PVE、资源本、世界Boss和合作玩法&quot;]},{&quot;id&quot;:&quot;B2&quot;,&quot;name&quot;:&quot;棋盘与部署框架&quot;,&quot;key&quot;:&quot;棋盘格、合法区域、上阵人口、备战区、拖拽、自动放置、满员、出售、阵容确认&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立棋盘、上下阵、站位与合法性判断；◇预留备战区和人口接口&quot;,&quot;▲ 加入备战区、自动放置、满员、出售和人口限制&quot;,&quot;▲ 读取出战卡组和双方阵容快照&quot;,&quot;■ 操作、异常状态和性能完善&quot;,&quot;▲ 适配PVE、Boss及合作模式棋盘规则&quot;]},{&quot;id&quot;:&quot;B3&quot;,&quot;name&quot;:&quot;局内构筑框架&quot;,&quot;key&quot;:&quot;候选池、三选一、刷新、升星、羁绊、局内经济、临时成长&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 预留阵容来源、属性修正和效果挂载接口&quot;,&quot;● 建立三选一、刷新、升星、羁绊和局内经济&quot;,&quot;▲ 候选池接入局外卡组；局内星级叠加局外等级&quot;,&quot;■ 配置、平衡和异常流程完善&quot;,&quot;▲ 适配不同玩法的构筑规则&quot;]},{&quot;id&quot;:&quot;B4&quot;,&quot;name&quot;:&quot;对局与回合流程框架&quot;,&quot;key&quot;:&quot;单轮/整局状态、准备、战斗、回合结算、生命、淘汰、最终结算、清理&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 定义单轮与整局状态边界、结果结构和清理规则&quot;,&quot;● 建立准备—战斗—结算—下一轮循环&quot;,&quot;▲ 接入对局创建、真人/AI、中断恢复、掉线重连&quot;,&quot;■ 异常流程与连续运行稳定性&quot;,&quot;▲ 适配PVE、Boss及合作模式流程&quot;]},{&quot;id&quot;:&quot;B5&quot;,&quot;name&quot;:&quot;数据驱动与配置运行框架&quot;,&quot;key&quot;:&quot;稳定ID、数据结构、引用、配置加载、版本、校验、功能开关&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立武将、技能、Action、Buff和战斗参数结构&quot;,&quot;▲ 加入候选、升星、羁绊、经济和回合配置&quot;,&quot;▲ 加入资产、养成、卡组、体力、匹配和奖励配置&quot;,&quot;▲ 加入任务、招募、公会、活动和商业化配置&quot;,&quot;■ 跨日内容、开放计划和多玩法统一配置&quot;]},{&quot;id&quot;:&quot;B6&quot;,&quot;name&quot;:&quot;战斗事件与回放框架&quot;,&quot;key&quot;:&quot;确定性随机、事件流、日志、统计、复现、回放、表现同步&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立随机种子、战斗事件流和单场复现&quot;,&quot;▲ 记录构筑变化、多轮状态和完整对局事件&quot;,&quot;▲ 支持服务端结果、重连恢复和完整对局回放&quot;,&quot;■ 自动回归、异常定位和统计一致性&quot;,&quot;▲ 支持多玩法日志与三日行为查询&quot;]},{&quot;id&quot;:&quot;B7&quot;,&quot;name&quot;:&quot;UIManager&quot;,&quot;key&quot;:&quot;页面生命周期、页面栈、层级、弹窗、消息、适配、场景切换、资源释放&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立并通过测试页面验证；A1不要求完整使用&quot;,&quot;◆ 接入战斗HUD、三选一、回合和结算页面&quot;,&quot;▲ 接入主界面、养成、卡组、匹配和奖励页面&quot;,&quot;▲ 接入教学、任务、活动、公会和商城模板&quot;,&quot;■ 跨日、回流和多玩法页面稳定复用&quot;]},{&quot;id&quot;:&quot;B8&quot;,&quot;name&quot;:&quot;资源管理框架&quot;,&quot;key&quot;:&quot;资源定位、异步加载、引用、缓存、释放、版本、分包&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;● 建立基础加载、缓存、释放；◇预留资源版本边界&quot;,&quot;▲ 支持多武将、技能、棋盘和完整对局&quot;,&quot;▲ 支持局外页面、头像、卡组和动态资源&quot;,&quot;■ 分包、性能预算和批量生产&quot;,&quot;▲ 支持跨日内容、活动资源和按需更新&quot;]},{&quot;id&quot;:&quot;B9&quot;,&quot;name&quot;:&quot;玩家身份、数据与存档框架&quot;,&quot;key&quot;:&quot;玩家ID、局内临时数据、永久资产、武将、卡组、体力、进度、跨日状态&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 定义玩家ID、单位快照、临时/永久数据边界&quot;,&quot;◇ 验证完整对局快照与局内数据清理&quot;,&quot;● 建立资产、养成、卡组、体力和玩家存档&quot;,&quot;▲ 扩展任务、招募、排行榜、公会和商业化状态&quot;,&quot;▲ 扩展跨日开放、三日进度和回流状态&quot;]},{&quot;id&quot;:&quot;B10&quot;,&quot;name&quot;:&quot;网络、匹配与权威框架&quot;,&quot;key&quot;:&quot;请求协议、对手提供器、匹配队列、AI、对局实例、权威结果、重连&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 定义战斗输入/输出、对手提供器和权威演算边界&quot;,&quot;◇ 使用本地AI验证边界，不强制实现在线功能&quot;,&quot;● 建立真人匹配、AI生成、对局服务和中断恢复&quot;,&quot;■ 错误处理、监控、日志和稳定性&quot;,&quot;▲ 支持合作模式、公会Boss等多人玩法&quot;]},{&quot;id&quot;:&quot;B11&quot;,&quot;name&quot;:&quot;资产、奖励与事务框架&quot;,&quot;key&quot;:&quot;资产增减、奖励资格、奖励计算、唯一结算、重复保护、补偿&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 预留标准战斗结果和结算输出结构&quot;,&quot;◇ 建立唯一对局结果结构&quot;,&quot;● 建立资产、对局奖励、原子写入和重复发奖保护&quot;,&quot;▲ 接入任务、活动、商业化和公会奖励&quot;,&quot;■ 跨日奖励、未领取状态和异常补偿&quot;]},{&quot;id&quot;:&quot;B12&quot;,&quot;name&quot;:&quot;任务、开放与周期框架&quot;,&quot;key&quot;:&quot;通用条件、事件统计、任务、活跃度、功能开放、周期刷新、回流&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;◇ 预留通用行为事件和条件统计接口&quot;,&quot;◇ 接入对局、养成、资产等行为事件&quot;,&quot;● 建立新手、首日、日常、七日活动和功能开放&quot;,&quot;▲ 跨日刷新、三日目标、回流和后续入口推荐&quot;]},{&quot;id&quot;:&quot;B13&quot;,&quot;name&quot;:&quot;新手与流程引导框架&quot;,&quot;key&quot;:&quot;教学步骤、触发、操作限制、状态判断、中断恢复、完成标记&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;◇ 预留可控输入和步骤事件&quot;,&quot;◇ 用局内流程验证教学挂接点&quot;,&quot;▲ 接入基础玩法说明&quot;,&quot;● 建立完整系统教学和战斗教学&quot;,&quot;■ 复用于后续开放玩法&quot;]},{&quot;id&quot;:&quot;B14&quot;,&quot;name&quot;:&quot;长线与运营系统框架&quot;,&quot;key&quot;:&quot;招募、排行榜、公会、商城、战令、活动、公告、邮件、持续参与&quot;,&quot;lane&quot;:&quot;B&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 预留资产、条件、奖励和入口通用边界&quot;,&quot;● 建立首日范围内的长线和运营系统&quot;,&quot;▲ 扩展三日开放、Boss、合作、宝物和收集系统&quot;]},{&quot;id&quot;:&quot;C1&quot;,&quot;name&quot;:&quot;基础数据与配置工作台&quot;,&quot;key&quot;:&quot;武将、属性、参数、ID、引用、导入导出、版本和校验&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立武将、属性、技能和战斗参数配置&quot;,&quot;▲ 加入候选、经济、升星、羁绊配置&quot;,&quot;▲ 加入养成、卡组、体力、奖励和AI配置&quot;,&quot;▲ 加入任务、招募、公会、商城和活动配置&quot;,&quot;■ 跨日内容、开放日期和多玩法统一配置&quot;]},{&quot;id&quot;:&quot;C2&quot;,&quot;name&quot;:&quot;技能、Action与Buff编辑器&quot;,&quot;key&quot;:&quot;技能触发、目标选择、Action组合、Buff、数值、时间点、特效挂点&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立基础编辑、预览与合法性校验&quot;,&quot;▲ 加入满星大招、羁绊效果和复杂组合&quot;,&quot;▲ 加入局外属性修正和AI相关参数&quot;,&quot;■ 支持批量生产与自动校验&quot;,&quot;▲ 支持多玩法专用效果&quot;]},{&quot;id&quot;:&quot;C3&quot;,&quot;name&quot;:&quot;战斗调试器&quot;,&quot;key&quot;:&quot;快速开战、指定阵容/站位/种子、倍速、暂停、事件和状态查看&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立固定阵容、站位、种子、倍速和日志&quot;,&quot;▲ 加入构筑、回合、生命和结算调试&quot;,&quot;▲ 加入真人/AI数据、中断和恢复调试&quot;,&quot;■ 形成标准问题定位和回归入口&quot;,&quot;▲ 加入多玩法调试场景&quot;]},{&quot;id&quot;:&quot;C4&quot;,&quot;name&quot;:&quot;棋盘与部署编辑器&quot;,&quot;key&quot;:&quot;棋盘格、合法区域、人口、备战区、阵容模板、AI站位&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立棋盘格、合法区域和固定站位配置&quot;,&quot;▲ 加入人口、备战区、AI阵容和自动放置&quot;,&quot;▲ 加入卡组与AI阵容模板&quot;,&quot;■ 支持批量棋盘制作&quot;,&quot;▲ 支持PVE、Boss和合作棋盘&quot;]},{&quot;id&quot;:&quot;C5&quot;,&quot;name&quot;:&quot;局内构筑与数值编辑器&quot;,&quot;key&quot;:&quot;候选池、刷新、费用、升星、羁绊、局内经济、成长倍率&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 确定数据接口和模拟输入结构&quot;,&quot;● 建立候选、经济、升星和羁绊配置&quot;,&quot;▲ 加入局外卡组与成长换算&quot;,&quot;■ 形成稳定平衡迭代流程&quot;,&quot;▲ 适配不同玩法构筑规则&quot;]},{&quot;id&quot;:&quot;C6&quot;,&quot;name&quot;:&quot;对局流程编辑器&quot;,&quot;key&quot;:&quot;阶段、回合、倒计时、生命、淘汰、结算、异常流程&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 定义状态节点与事件结构&quot;,&quot;● 建立完整对局流程配置&quot;,&quot;▲ 加入真人/AI、中断恢复和异常流程&quot;,&quot;■ 流程模板化与自动校验&quot;,&quot;▲ 加入多玩法流程模板&quot;]},{&quot;id&quot;:&quot;C7&quot;,&quot;name&quot;:&quot;局外成长配置工具&quot;,&quot;key&quot;:&quot;玩家初始资产、武将升级、卡组、体力、奖励、匹配和AI&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 确定通用属性、资产和奖励结构&quot;,&quot;—&quot;,&quot;● 建立养成、卡组、体力、奖励和AI配置&quot;,&quot;▲ 扩展招募和首日成长配置&quot;,&quot;▲ 扩展三日成长和新玩法产出&quot;]},{&quot;id&quot;:&quot;C8&quot;,&quot;name&quot;:&quot;任务、活动与商业化配置工具&quot;,&quot;key&quot;:&quot;条件、任务、活跃度、开放计划、商品、限购、奖励、刷新&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 确定通用条件、奖励、时间和功能开关结构&quot;,&quot;—&quot;,&quot;◇ 使用测试数据验证配置结构&quot;,&quot;● 建立首日任务、七日活动、公会、商城等配置&quot;,&quot;▲ 加入三日开放、跨日刷新和回流配置&quot;]},{&quot;id&quot;:&quot;C9&quot;,&quot;name&quot;:&quot;数值模拟与平衡工具&quot;,&quot;key&quot;:&quot;批量战斗、阵容胜率、武将强度、星级、羁绊、AI、产消&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 建立单场批量模拟原型&quot;,&quot;● 支持阵容、武将、羁绊和星级分析&quot;,&quot;▲ 支持AI强度与局外成长曲线&quot;,&quot;▲ 支持首日资源产消分析&quot;,&quot;■ 支持三日成长、产消和行为分析&quot;]},{&quot;id&quot;:&quot;C10&quot;,&quot;name&quot;:&quot;自动化测试与CI&quot;,&quot;key&quot;:&quot;单元测试、配置校验、种子复现、连续运行、状态与事务测试&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立构建、基础测试、配置校验和连续战斗&quot;,&quot;▲ 加入完整对局、状态清理和复现测试&quot;,&quot;▲ 加入存档、匹配、重连、资产和发奖测试&quot;,&quot;■ 加入首日流程和大规模内容回归&quot;,&quot;▲ 加入跨日刷新和三日进度回归&quot;]},{&quot;id&quot;:&quot;C11&quot;,&quot;name&quot;:&quot;内容构建、发布与热更管线&quot;,&quot;key&quot;:&quot;配置打包、资源打包、版本对应、发布、分包、回滚&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;● 建立基础构建和资源打包&quot;,&quot;▲ 支持完整对局内容构建&quot;,&quot;▲ 建立客户端/服务端配置版本对应&quot;,&quot;■ 支持内容发布、分包、监控和回滚&quot;,&quot;▲ 支持按日开放和多玩法内容发布&quot;]},{&quot;id&quot;:&quot;C12&quot;,&quot;name&quot;:&quot;数据日志与查询工具&quot;,&quot;key&quot;:&quot;战斗日志、对局查询、资产流水、奖励、异常、关键行为分析&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 定义战斗日志结构&quot;,&quot;▲ 支持完整对局过程和结果查询&quot;,&quot;● 支持资产、匹配、奖励和异常查询&quot;,&quot;▲ 支持首日关键路径和流失查询&quot;,&quot;■ 支持三日行为、资源流转和开放状态查询&quot;]},{&quot;id&quot;:&quot;C13&quot;,&quot;name&quot;:&quot;美术资源处理工具&quot;,&quot;key&quot;:&quot;导入检查、命名检查、压缩、图集、LOD、批处理、资源报告&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 建立基础导入和规格检查&quot;,&quot;▲ 加入批量压缩、图集和LOD&quot;,&quot;■ 接入正式资产库和构建管线&quot;,&quot;▲ 支撑首日批量生产&quot;,&quot;▲ 支撑多玩法和持续内容生产&quot;]},{&quot;id&quot;:&quot;C14&quot;,&quot;name&quot;:&quot;UI组件与页面生产工具&quot;,&quot;key&quot;:&quot;组件模板、预制体、页面拼接、数据绑定、资源检查&quot;,&quot;lane&quot;:&quot;C&quot;,&quot;stages&quot;:[&quot;◇ 建立基础控件和页面模板&quot;,&quot;▲ 加入战斗与构筑组件模板&quot;,&quot;▲ 加入局外、养成、卡组和匹配模板&quot;,&quot;■ 加入任务、活动、教学和商品模板&quot;,&quot;▲ 加入跨日和多玩法模板&quot;]},{&quot;id&quot;:&quot;D1&quot;,&quot;name&quot;:&quot;美术风格验证&quot;,&quot;key&quot;:&quot;武将、动物特征、棋盘、战斗特效、UI视觉底子和标准样片&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 完成代表武将、棋盘、特效和UI视觉定调&quot;,&quot;■ 固化正式风格基准&quot;,&quot;—&quot;,&quot;—&quot;,&quot;—&quot;]},{&quot;id&quot;:&quot;D2&quot;,&quot;name&quot;:&quot;武将资产生产管线&quot;,&quot;key&quot;:&quot;概念、模型、贴图、骨骼、材质、头像、职业/品质标识&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 完成代表武将及完整制作流程&quot;,&quot;▲ 完成首批6名武将&quot;,&quot;▲ 补充局外头像、养成和卡组资源&quot;,&quot;■ 支持首日批量内容&quot;,&quot;▲ 支持三日新增内容和玩法敌人&quot;]},{&quot;id&quot;:&quot;D3&quot;,&quot;name&quot;:&quot;武将动画管线&quot;,&quot;key&quot;:&quot;待机、移动、普攻、技能、大招、特殊待机、欢呼、死亡&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立基础动作、状态切换和时间点标准&quot;,&quot;▲ 补齐8类动作、升星和满星大招&quot;,&quot;▲ 加入养成、匹配和结算表现&quot;,&quot;■ 支持批量生产和动作复用&quot;,&quot;▲ 支持Boss、合作和特殊玩法动作&quot;]},{&quot;id&quot;:&quot;D4&quot;,&quot;name&quot;:&quot;战斗特效管线&quot;,&quot;key&quot;:&quot;普攻、弹道、命中、受击、技能、Buff、治疗、护盾、控制&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立普攻、技能、命中、受击和胜负基准&quot;,&quot;▲ 加入升星、羁绊、大招、扣血、淘汰和结算&quot;,&quot;▲ 加入真人/AI、局外属性和奖励反馈&quot;,&quot;■ 形成组件化特效生产&quot;,&quot;▲ 支持多玩法、Boss和合作反馈&quot;]},{&quot;id&quot;:&quot;D5&quot;,&quot;name&quot;:&quot;音频生产管线&quot;,&quot;key&quot;:&quot;操作、战斗、技能、状态、胜负、结算、UI和环境音频&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立战斗和基础UI音效规范&quot;,&quot;▲ 加入完整对局、升星、羁绊和结算音频&quot;,&quot;▲ 加入匹配、养成、奖励和局外音频&quot;,&quot;■ 支持首日系统和运营内容&quot;,&quot;▲ 支持多玩法、Boss和跨日反馈&quot;]},{&quot;id&quot;:&quot;D6&quot;,&quot;name&quot;:&quot;棋盘与场景资产管线&quot;,&quot;key&quot;:&quot;棋盘、格子、备战区、单位底座、背景、加载场景&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立标准棋盘和测试场景&quot;,&quot;▲ 完成正式棋盘、备战区和部署标记&quot;,&quot;▲ 加入匹配、加载和局外背景&quot;,&quot;■ 支持首日场景内容生产&quot;,&quot;▲ 加入副本、资源本、世界Boss和合作场景&quot;]},{&quot;id&quot;:&quot;D7&quot;,&quot;name&quot;:&quot;局内视觉资源&quot;,&quot;key&quot;:&quot;血条、能量、状态、伤害类型、星级、羁绊、人口、回合和结算标识&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立状态、统计和胜负基础资源&quot;,&quot;▲ 加入卡片、星级、羁绊、人口、生命和结算资源&quot;,&quot;▲ 加入真人/AI与局外属性标识&quot;,&quot;■ 规范化、组件化复用&quot;,&quot;▲ 加入多玩法专用标识&quot;]},{&quot;id&quot;:&quot;D8&quot;,&quot;name&quot;:&quot;局外基础视觉资源&quot;,&quot;key&quot;:&quot;货币、道具、体力、武将、卡组、养成、奖励、入口&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;◇ 确定图标、卡片和信息展示规范&quot;,&quot;—&quot;,&quot;● 建立资产、养成、卡组、体力、匹配和奖励资源&quot;,&quot;▲ 加入招募与首日成长资源&quot;,&quot;▲ 加入三日成长和新增玩法资源&quot;]},{&quot;id&quot;:&quot;D9&quot;,&quot;name&quot;:&quot;新手、任务与活动视觉资源&quot;,&quot;key&quot;:&quot;教学插图、遮罩素材、任务、活跃度、七日活动、回流&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;◇ 预留教学与通用任务视觉规范&quot;,&quot;—&quot;,&quot;◇ 建立基础玩法说明资源&quot;,&quot;● 完成教学、首日任务、七日活动和领奖资源&quot;,&quot;▲ 加入三日目标、新开放内容和回流资源&quot;]},{&quot;id&quot;:&quot;D10&quot;,&quot;name&quot;:&quot;社交与商业化视觉资源&quot;,&quot;key&quot;:&quot;公会、排行榜、商城、首充、战令、月卡、基金、礼包&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 确定通用商品和玩家信息视觉结构&quot;,&quot;● 完成首日范围资源&quot;,&quot;▲ 扩展公会Boss、长期商品和活动资源&quot;]},{&quot;id&quot;:&quot;D11&quot;,&quot;name&quot;:&quot;收集与多玩法视觉资源&quot;,&quot;key&quot;:&quot;宝物、棋盘皮肤、击杀效果、藏品、PVE、Boss和合作&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;—&quot;,&quot;◇ 确定通用入口和资源类型&quot;,&quot;▲ 根据三日需求制作，待确认项不提前量产&quot;]},{&quot;id&quot;:&quot;D12&quot;,&quot;name&quot;:&quot;资源规格与性能标准&quot;,&quot;key&quot;:&quot;面数、贴图、材质、骨骼、动画、粒子、DrawCall、内存&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;● 建立初版规格和标准战斗场景基准&quot;,&quot;▲ 加入LOD、图集、压缩和完整对局预算&quot;,&quot;■ 覆盖局内外正式资源&quot;,&quot;▲ 支撑首日批量生产&quot;,&quot;▲ 支撑多玩法和持续内容生产&quot;]},{&quot;id&quot;:&quot;D13&quot;,&quot;name&quot;:&quot;美术资产库与工具链&quot;,&quot;key&quot;:&quot;目录、命名、资产库、批量导入、压缩、LOD和资源检查&quot;,&quot;lane&quot;:&quot;D&quot;,&quot;stages&quot;:[&quot;◇ 建立目录、命名和导入规则&quot;,&quot;▲ 建立批量处理和资源检查&quot;,&quot;■ 接入正式构建与资源管理&quot;,&quot;▲ 支撑批量生产&quot;,&quot;▲ 支撑持续生产和多玩法扩展&quot;]},{&quot;id&quot;:&quot;E1&quot;,&quot;name&quot;:&quot;交互框架与GUI规范&quot;,&quot;key&quot;:&quot;信息层级、输入、状态反馈、弹窗、提示、操作一致性和视觉规则&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;● 建立交互原则、基础状态和GUI风格&quot;,&quot;▲ 完善局内交互规范&quot;,&quot;▲ 建立局外导航和信息层级&quot;,&quot;■ 形成教学、活动、任务和商品模板规范&quot;,&quot;▲ 扩展跨日、回流和多玩法规范&quot;]},{&quot;id&quot;:&quot;E2&quot;,&quot;name&quot;:&quot;战斗HUD&quot;,&quot;key&quot;:&quot;血条、能量、Buff、关键事件、统计、胜负和重新挑战&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;● 建立基础战斗HUD并服务A1&quot;,&quot;▲ 加入回合、生命、构筑信息和完整统计&quot;,&quot;▲ 加入真人/AI、中断恢复和局外属性展示&quot;,&quot;■ 教学提示、性能和适配完善&quot;,&quot;▲ 适配PVE、Boss和合作玩法&quot;]},{&quot;id&quot;:&quot;E3&quot;,&quot;name&quot;:&quot;棋盘与部署交互&quot;,&quot;key&quot;:&quot;棋盘格、选择、拖拽、上下阵、备战区、人口、出售、非法位置&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;● 建立选择、拖拽、上下阵和合法位置反馈&quot;,&quot;▲ 加入备战区、人口、自动放置、满员和出售&quot;,&quot;▲ 接入卡组和双方阵容数据&quot;,&quot;■ 操作体验与异常状态完善&quot;,&quot;▲ 适配多种棋盘和玩法规则&quot;]},{&quot;id&quot;:&quot;E4&quot;,&quot;name&quot;:&quot;局内构筑UI&quot;,&quot;key&quot;:&quot;三选一、刷新、金币、升星、羁绊、阵容和局内成长&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 预留候选、卡片和属性展示接口&quot;,&quot;● 建立完整三选一、升星、羁绊和经济界面&quot;,&quot;▲ 接入局外卡组和永久属性&quot;,&quot;■ 组件化、性能和操作优化&quot;,&quot;▲ 适配不同玩法构筑规则&quot;]},{&quot;id&quot;:&quot;E5&quot;,&quot;name&quot;:&quot;回合与结算UI&quot;,&quot;key&quot;:&quot;倒计时、本轮胜负、生命、淘汰、最终结果、统计和出口&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 建立标准单场结果展示&quot;,&quot;● 建立回合、扣血、淘汰和最终结算界面&quot;,&quot;▲ 加入奖励回写、退出、重连和异常反馈&quot;,&quot;■ 完成首日流程联调&quot;,&quot;▲ 建立多玩法结算模板&quot;]},{&quot;id&quot;:&quot;E6&quot;,&quot;name&quot;:&quot;局外主界面与导航&quot;,&quot;key&quot;:&quot;主界面、资产栏、功能入口、页面导航、通知和状态总览&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 使用测试页验证UIManager，不要求正式主界面&quot;,&quot;—&quot;,&quot;● 建立主界面、资产栏、入口和导航&quot;,&quot;▲ 增加首日系统入口、红点和推荐&quot;,&quot;■ 支持跨日开放、回流和动态入口&quot;]},{&quot;id&quot;:&quot;E7&quot;,&quot;name&quot;:&quot;武将养成UI&quot;,&quot;key&quot;:&quot;武将列表、详情、属性、升级、消耗、成长预览和满级状态&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 建立可复用单位信息组件&quot;,&quot;▲ 复用局内卡片和属性展示&quot;,&quot;● 建立武将列表、详情、升级和预览&quot;,&quot;▲ 接入招募与收藏&quot;,&quot;▲ 加入三日成长建议和新养成内容&quot;]},{&quot;id&quot;:&quot;E8&quot;,&quot;name&quot;:&quot;卡组UI&quot;,&quot;key&quot;:&quot;卡组列表、武将选择、组成规则、检查、保存、切换和出战确认&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 预留阵容编辑与卡片组件接口&quot;,&quot;▲ 验证局内阵容数据结构&quot;,&quot;● 建立完整卡组编辑和出战确认&quot;,&quot;■ 操作与搭配提示完善&quot;,&quot;▲ 适配新增武将和玩法卡组&quot;]},{&quot;id&quot;:&quot;E9&quot;,&quot;name&quot;:&quot;对战入口与匹配UI&quot;,&quot;key&quot;:&quot;体力、模式选择、资格、等待、取消、超时、对手确认、加载&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;◇ 预留对局入口和结算出口&quot;,&quot;● 建立真人/AI选择、匹配等待和加载流程&quot;,&quot;■ 异常、恢复和反馈完善&quot;,&quot;▲ 加入合作、Boss等新入口&quot;]},{&quot;id&quot;:&quot;E10&quot;,&quot;name&quot;:&quot;资产与奖励UI&quot;,&quot;key&quot;:&quot;货币、道具、资产变化、奖励预览、领取、发放结果和补偿&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 建立通用数值变化和结果反馈组件&quot;,&quot;◇ 使用结算数据验证结果组件&quot;,&quot;● 建立资产栏、奖励结果和资源变化反馈&quot;,&quot;▲ 接入任务、活动、公会和商业化奖励&quot;,&quot;■ 支持跨日未领取、补偿和批量领取&quot;]},{&quot;id&quot;:&quot;E11&quot;,&quot;name&quot;:&quot;新手教学UI&quot;,&quot;key&quot;:&quot;遮罩、聚焦、箭头、说明、操作限制、步骤、恢复和完成状态&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 预留遮罩、聚焦和操作限制能力&quot;,&quot;◇ 使用局内流程验证步骤驱动接口&quot;,&quot;▲ 接入基础玩法说明&quot;,&quot;● 建立完整系统教学和战斗教学&quot;,&quot;■ 复用于后续开放玩法&quot;]},{&quot;id&quot;:&quot;E12&quot;,&quot;name&quot;:&quot;任务、活动与回流UI&quot;,&quot;key&quot;:&quot;新手任务、首日任务、日常、活跃度、七日活动、三日目标、回流&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;◇ 建立通用进度、条件和奖励组件结构&quot;,&quot;—&quot;,&quot;◇ 使用测试数据验证模板&quot;,&quot;● 建立首日任务、活跃度、七日活动和领奖&quot;,&quot;▲ 建立三日目标、新开放提示、未领奖励和登录回流&quot;]},{&quot;id&quot;:&quot;E13&quot;,&quot;name&quot;:&quot;招募与收集UI&quot;,&quot;key&quot;:&quot;招募入口、概率、保障、结果、记录、武将/棋盘/击杀效果/藏品收集&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 预留通用卡池、概率和结果组件&quot;,&quot;● 建立武将招募和结果界面&quot;,&quot;▲ 加入棋盘、击杀效果、宝物和藏品收集，待确认&quot;]},{&quot;id&quot;:&quot;E14&quot;,&quot;name&quot;:&quot;排行榜与玩家信息UI&quot;,&quot;key&quot;:&quot;等级榜、PVP榜、Boss榜、个人排名和玩家详情&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 确定玩家摘要和排名组件&quot;,&quot;● 建立首日排行榜及玩家信息&quot;,&quot;▲ 扩展多玩法排行和周期结算反馈&quot;]},{&quot;id&quot;:&quot;E15&quot;,&quot;name&quot;:&quot;公会与社交UI&quot;,&quot;key&quot;:&quot;创建、加入、成员、职位、捐献、商店、互动和聊天入口&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 确定成员、货币和列表通用组件&quot;,&quot;● 建立公会基础流程&quot;,&quot;▲ 加入公会Boss和三日社交目标&quot;]},{&quot;id&quot;:&quot;E16&quot;,&quot;name&quot;:&quot;商业化UI&quot;,&quot;key&quot;:&quot;商城、首充、战令、月卡、基金、商品、限购、支付和补发&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 确定商品卡片、价格、购买状态和奖励组件&quot;,&quot;● 建立首日商业化范围&quot;,&quot;▲ 加入跨日刷新、长期商品和活动模板&quot;]},{&quot;id&quot;:&quot;E17&quot;,&quot;name&quot;:&quot;公告、邮件与信息服务UI&quot;,&quot;key&quot;:&quot;公告、预告、邮件、附件、未读和回流提示&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;—&quot;,&quot;—&quot;,&quot;◇ 预留通用消息、附件和未读状态&quot;,&quot;▲ 建立首日必要通知&quot;,&quot;● 支持跨日公告、预告、邮件和回流信息&quot;]},{&quot;id&quot;:&quot;E18&quot;,&quot;name&quot;:&quot;UI组件与预制体库&quot;,&quot;key&quot;:&quot;按钮、文本、弹窗、列表、卡片、状态、奖励、商品、任务模板&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;● 建立基础控件、弹窗、列表和卡片骨架&quot;,&quot;▲ 加入战斗与构筑组件&quot;,&quot;▲ 加入局外、养成、卡组和匹配组件&quot;,&quot;■ 加入教学、任务、活动和商品模板&quot;,&quot;▲ 加入跨日和多玩法组件&quot;]},{&quot;id&quot;:&quot;E19&quot;,&quot;name&quot;:&quot;UI性能与资源标准&quot;,&quot;key&quot;:&quot;图集、加载、实例、刷新、复用、适配和内存标准&quot;,&quot;lane&quot;:&quot;E&quot;,&quot;stages&quot;:[&quot;● 建立初版性能与资源规则&quot;,&quot;▲ 使用完整对局验证&quot;,&quot;▲ 覆盖局内外切换和资源释放&quot;,&quot;■ 支撑首日大量页面与模板&quot;,&quot;▲ 支撑多玩法和持续内容扩展&quot;]}],&quot;keyEdges&quot;:[[&quot;B5&quot;,&quot;C1&quot;],[&quot;B5&quot;,&quot;C2&quot;],[&quot;B5&quot;,&quot;C5&quot;],[&quot;B5&quot;,&quot;C6&quot;],[&quot;B5&quot;,&quot;C7&quot;],[&quot;B5&quot;,&quot;C8&quot;],[&quot;B1&quot;,&quot;B6&quot;],[&quot;B1&quot;,&quot;C3&quot;],[&quot;B1&quot;,&quot;D2&quot;],[&quot;B1&quot;,&quot;D3&quot;],[&quot;B1&quot;,&quot;D4&quot;],[&quot;B1&quot;,&quot;D5&quot;],[&quot;B1&quot;,&quot;E2&quot;],[&quot;B2&quot;,&quot;C4&quot;],[&quot;B2&quot;,&quot;D6&quot;],[&quot;B2&quot;,&quot;E3&quot;],[&quot;B3&quot;,&quot;D7&quot;],[&quot;B3&quot;,&quot;E4&quot;],[&quot;B4&quot;,&quot;E5&quot;],[&quot;B4&quot;,&quot;B10&quot;],[&quot;B6&quot;,&quot;C10&quot;],[&quot;B6&quot;,&quot;C12&quot;],[&quot;B7&quot;,&quot;C14&quot;],[&quot;B7&quot;,&quot;E1&quot;],[&quot;B7&quot;,&quot;E6&quot;],[&quot;B7&quot;,&quot;E18&quot;],[&quot;B8&quot;,&quot;C11&quot;],[&quot;B8&quot;,&quot;C13&quot;],[&quot;B8&quot;,&quot;D13&quot;],[&quot;B8&quot;,&quot;E19&quot;],[&quot;B9&quot;,&quot;B11&quot;],[&quot;B9&quot;,&quot;E7&quot;],[&quot;B9&quot;,&quot;E8&quot;],[&quot;B9&quot;,&quot;E10&quot;],[&quot;B10&quot;,&quot;E9&quot;],[&quot;B11&quot;,&quot;B12&quot;],[&quot;B11&quot;,&quot;B14&quot;],[&quot;B12&quot;,&quot;E12&quot;],[&quot;B12&quot;,&quot;E17&quot;],[&quot;B13&quot;,&quot;D9&quot;],[&quot;B13&quot;,&quot;E11&quot;],[&quot;B14&quot;,&quot;D10&quot;],[&quot;B14&quot;,&quot;D11&quot;],[&quot;B14&quot;,&quot;E13&quot;],[&quot;B14&quot;,&quot;E14&quot;],[&quot;B14&quot;,&quot;E15&quot;],[&quot;B14&quot;,&quot;E16&quot;],[&quot;C7&quot;,&quot;D8&quot;]],&quot;births&quot;:{&quot;B1&quot;:1,&quot;B2&quot;:1,&quot;B3&quot;:2,&quot;B4&quot;:2,&quot;B5&quot;:1,&quot;B6&quot;:1,&quot;B7&quot;:1,&quot;B8&quot;:1,&quot;B9&quot;:3,&quot;B10&quot;:3,&quot;B11&quot;:3,&quot;B12&quot;:4,&quot;B13&quot;:4,&quot;B14&quot;:4,&quot;C1&quot;:1,&quot;C2&quot;:1,&quot;C3&quot;:1,&quot;C4&quot;:1,&quot;C5&quot;:2,&quot;C6&quot;:2,&quot;C7&quot;:3,&quot;C8&quot;:4,&quot;C9&quot;:2,&quot;C10&quot;:1,&quot;C11&quot;:1,&quot;C12&quot;:3,&quot;C13&quot;:1,&quot;C14&quot;:1,&quot;D1&quot;:1,&quot;D2&quot;:1,&quot;D3&quot;:1,&quot;D4&quot;:1,&quot;D5&quot;:1,&quot;D6&quot;:1,&quot;D7&quot;:1,&quot;D8&quot;:3,&quot;D9&quot;:4,&quot;D10&quot;:4,&quot;D11&quot;:4,&quot;D12&quot;:1,&quot;D13&quot;:1,&quot;E1&quot;:1,&quot;E2&quot;:1,&quot;E3&quot;:1,&quot;E4&quot;:2,&quot;E5&quot;:2,&quot;E6&quot;:3,&quot;E7&quot;:3,&quot;E8&quot;:3,&quot;E9&quot;:3,&quot;E10&quot;:3,&quot;E11&quot;:4,&quot;E12&quot;:4,&quot;E13&quot;:4,&quot;E14&quot;:4,&quot;E15&quot;:4,&quot;E16&quot;:4,&quot;E17&quot;:5,&quot;E18&quot;:1,&quot;E19&quot;:1},&quot;depths&quot;:{&quot;B1&quot;:0,&quot;B2&quot;:0,&quot;B3&quot;:0,&quot;B4&quot;:0,&quot;B5&quot;:0,&quot;B6&quot;:1,&quot;B7&quot;:0,&quot;B8&quot;:0,&quot;B9&quot;:0,&quot;B10&quot;:0,&quot;B11&quot;:1,&quot;B12&quot;:0,&quot;B13&quot;:0,&quot;B14&quot;:0,&quot;C1&quot;:1,&quot;C2&quot;:1,&quot;C3&quot;:1,&quot;C4&quot;:1,&quot;C5&quot;:0,&quot;C6&quot;:0,&quot;C7&quot;:0,&quot;C8&quot;:0,&quot;C9&quot;:0,&quot;C10&quot;:2,&quot;C11&quot;:1,&quot;C12&quot;:0,&quot;C13&quot;:1,&quot;C14&quot;:1,&quot;D1&quot;:0,&quot;D2&quot;:1,&quot;D3&quot;:1,&quot;D4&quot;:1,&quot;D5&quot;:1,&quot;D6&quot;:1,&quot;D7&quot;:0,&quot;D8&quot;:1,&quot;D9&quot;:1,&quot;D10&quot;:1,&quot;D11&quot;:1,&quot;D12&quot;:0,&quot;D13&quot;:1,&quot;E1&quot;:1,&quot;E2&quot;:1,&quot;E3&quot;:1,&quot;E4&quot;:1,&quot;E5&quot;:1,&quot;E6&quot;:0,&quot;E7&quot;:1,&quot;E8&quot;:1,&quot;E9&quot;:1,&quot;E10&quot;:1,&quot;E11&quot;:1,&quot;E12&quot;:1,&quot;E13&quot;:1,&quot;E14&quot;:1,&quot;E15&quot;:1,&quot;E16&quot;:1,&quot;E17&quot;:0,&quot;E18&quot;:1,&quot;E19&quot;:1},&quot;spans&quot;:[3,2,2,2,1],&quot;laneNames&quot;:{&quot;B&quot;:&quot;程序与框架&quot;,&quot;C&quot;:&quot;生产工具链&quot;,&quot;D&quot;:&quot;美术与视听&quot;,&quot;E&quot;:&quot;UI与交互&quot;},&quot;phaseNames&quot;:[&quot;战斗概念版&quot;,&quot;对局玩法MVP&quot;,&quot;全量玩法MVP&quot;,&quot;一日版本&quot;,&quot;三日版本&quot;],&quot;milestones&quot;:[&quot;单场1v1&quot;,&quot;完整对局&quot;,&quot;局内＋局外&quot;,&quot;首日体验&quot;,&quot;三日体验&quot;],&quot;mature&quot;:{&quot;B1&quot;:4,&quot;B2&quot;:4,&quot;B3&quot;:4,&quot;B4&quot;:4,&quot;B5&quot;:5,&quot;B6&quot;:4,&quot;B7&quot;:5,&quot;B8&quot;:4,&quot;B9&quot;:0,&quot;B10&quot;:4,&quot;B11&quot;:5,&quot;B12&quot;:0,&quot;B13&quot;:5,&quot;B14&quot;:0,&quot;C1&quot;:5,&quot;C2&quot;:4,&quot;C3&quot;:4,&quot;C4&quot;:4,&quot;C5&quot;:4,&quot;C6&quot;:4,&quot;C7&quot;:0,&quot;C8&quot;:0,&quot;C9&quot;:5,&quot;C10&quot;:4,&quot;C11&quot;:4,&quot;C12&quot;:5,&quot;C13&quot;:3,&quot;C14&quot;:4,&quot;D1&quot;:2,&quot;D2&quot;:4,&quot;D3&quot;:4,&quot;D4&quot;:4,&quot;D5&quot;:4,&quot;D6&quot;:4,&quot;D7&quot;:4,&quot;D8&quot;:0,&quot;D9&quot;:0,&quot;D10&quot;:0,&quot;D11&quot;:0,&quot;D12&quot;:3,&quot;D13&quot;:3,&quot;E1&quot;:4,&quot;E2&quot;:4,&quot;E3&quot;:4,&quot;E4&quot;:4,&quot;E5&quot;:4,&quot;E6&quot;:5,&quot;E7&quot;:0,&quot;E8&quot;:4,&quot;E9&quot;:4,&quot;E10&quot;:5,&quot;E11&quot;:5,&quot;E12&quot;:0,&quot;E13&quot;:0,&quot;E14&quot;:0,&quot;E15&quot;:0,&quot;E16&quot;:0,&quot;E17&quot;:0,&quot;E18&quot;:4,&quot;E19&quot;:4}};
+    const root=document.getElementById(&#x27;pork-net-root&#x27;),chart=root.querySelector(&#x27;#pork-chart&#x27;),content=root.querySelector(&#x27;#pork-content&#x27;),svg=root.querySelector(&#x27;#pork-edges&#x27;),reset=root.querySelector(&#x27;#pork-reset&#x27;),focusText=root.querySelector(&#x27;#pork-focus-text&#x27;);
+    let activeId=null;
+    const total=data.spans.reduce((a,b)=&gt;a+b,0),grid=&#x27;118px repeat(&#x27;+total+&#x27;,minmax(0,1fr))&#x27;;
+    const head=document.createElement(&#x27;div&#x27;);head.className=&#x27;row head&#x27;;head.style.gridTemplateColumns=grid;head.innerHTML=&#x27;&lt;div class=&quot;corner&quot;&gt;A · 里程碑切片&lt;/div&gt;&#x27;;
+    data.phaseNames.forEach((name,i)=&gt;{const h=document.createElement(&#x27;div&#x27;);h.className=&#x27;phase&#x27;;h.style.gridColumn=&#x27;span &#x27;+data.spans[i];h.innerHTML=&#x27;A&#x27;+(i+1)+&#x27; &#x27;+name+&#x27;&lt;span&gt;&#x27;+data.milestones[i]+&#x27;&lt;/span&gt;&#x27;;head.appendChild(h)});content.appendChild(head);
+    [&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;].forEach(lane=&gt;{
+      const band=document.createElement(&#x27;section&#x27;);band.className=&#x27;row lane&#x27;;band.style.gridTemplateColumns=grid;band.innerHTML=&#x27;&lt;div class=&quot;lane-label&quot;&gt;&#x27;+lane+&#x27;&lt;span&gt;&#x27;+data.laneNames[lane]+&#x27;&lt;/span&gt;&lt;/div&gt;&#x27;;
+      data.phaseNames.forEach((_,pi)=&gt;{for(let d=0;d&lt;data.spans[pi];d++){const slot=document.createElement(&#x27;div&#x27;);slot.className=&#x27;slot&#x27;;data.rows.filter(r=&gt;r.lane===lane&amp;&amp;data.births[r.id]===pi+1&amp;&amp;data.depths[r.id]===d).forEach(r=&gt;{const n=document.createElement(&#x27;button&#x27;);n.type=&#x27;button&#x27;;n.className=&#x27;node&#x27;;n.dataset.id=r.id;n.dataset.lane=r.lane;const tip=&#x27;首次建立：A&#x27;+(pi+1)+&#x27; &#x27;+data.phaseNames[pi];n.setAttribute(&#x27;data-tooltip&#x27;,tip);n.setAttribute(&#x27;data-tooltip-placement&#x27;,&#x27;top&#x27;);n.setAttribute(&#x27;aria-label&#x27;,r.id+&#x27; &#x27;+r.name+&#x27;。&#x27;+tip);n.innerHTML=&#x27;&lt;strong&gt;&#x27;+r.id+&#x27; &#x27;+r.name+&#x27;&lt;/strong&gt;&#x27;;n.addEventListener(&#x27;click&#x27;,()=&gt;focus(r.id));slot.appendChild(n)});band.appendChild(slot)}});
+      content.appendChild(band);
+    });
+    function point(id,side){const n=root.querySelector(&#x27;.node[data-id=&quot;&#x27;+id+&#x27;&quot;]&#x27;);if(!n)return null;const r=n.getBoundingClientRect(),c=chart.getBoundingClientRect();return{x:(side===&#x27;right&#x27;?r.right:r.left)-c.left,y:r.top-c.top+r.height/2}}
+    function draw(){const r=chart.getBoundingClientRect();svg.setAttribute(&#x27;viewBox&#x27;,&#x27;0 0 &#x27;+r.width+&#x27; &#x27;+r.height);svg.innerHTML=&#x27;&lt;defs&gt;&lt;marker id=&quot;pork-arrow&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;9&quot; refY=&quot;5&quot; markerWidth=&quot;6&quot; markerHeight=&quot;6&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M0,0 L10,5 L0,10 Z&quot; fill=&quot;context-stroke&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&#x27;;data.keyEdges.forEach(([a,b])=&gt;{const s=point(a,&#x27;right&#x27;),t=point(b,&#x27;left&#x27;);if(!s||!t)return;const p=document.createElementNS(&#x27;http://www.w3.org/2000/svg&#x27;,&#x27;path&#x27;),bend=Math.max(20,Math.abs(t.x-s.x)*.35);p.setAttribute(&#x27;d&#x27;,&#x27;M&#x27;+s.x+&#x27;,&#x27;+s.y+&#x27; C&#x27;+(s.x+bend)+&#x27;,&#x27;+s.y+&#x27; &#x27;+(t.x-bend)+&#x27;,&#x27;+t.y+&#x27; &#x27;+t.x+&#x27;,&#x27;+t.y);p.setAttribute(&#x27;class&#x27;,&#x27;edge&#x27;);p.dataset.a=a;p.dataset.b=b;svg.appendChild(p)});applyFocus()}
+    function walk(start,dir){const seen=new Set(),stack=[start];while(stack.length){const id=stack.pop();data.keyEdges.forEach(([a,b])=&gt;{const next=dir===&#x27;in&#x27;&amp;&amp;b===id?a:dir===&#x27;out&#x27;&amp;&amp;a===id?b:null;if(next&amp;&amp;!seen.has(next)){seen.add(next);stack.push(next)}})}return seen}
+    function focus(id){activeId=id;applyFocus()}
+    function applyFocus(){
+      const allNodes=root.querySelectorAll(&#x27;.node&#x27;),allEdges=svg.querySelectorAll(&#x27;.edge&#x27;);
+      if(!activeId){allNodes.forEach(n=&gt;n.classList.remove(&#x27;is-hidden&#x27;,&#x27;is-selected&#x27;));allEdges.forEach(e=&gt;e.classList.remove(&#x27;is-hidden&#x27;));reset.hidden=true;focusText.textContent=&#x27;点击任一节点，只查看它所在的完整上下游链路。&#x27;;return}
+      const chain=new Set([activeId,...walk(activeId,&#x27;in&#x27;),...walk(activeId,&#x27;out&#x27;)]);
+      allNodes.forEach(n=&gt;{n.classList.toggle(&#x27;is-hidden&#x27;,!chain.has(n.dataset.id));n.classList.toggle(&#x27;is-selected&#x27;,n.dataset.id===activeId)});
+      allEdges.forEach(e=&gt;e.classList.toggle(&#x27;is-hidden&#x27;,!(chain.has(e.dataset.a)&amp;&amp;chain.has(e.dataset.b))));
+      const row=data.rows.find(r=&gt;r.id===activeId);focusText.textContent=activeId+&#x27; &#x27;+row.name+&#x27; · 当前仅显示其完整前置与后续链路&#x27;;reset.hidden=false;
+    }
+    reset.addEventListener(&#x27;click&#x27;,()=&gt;{activeId=null;applyFocus()});
+    new ResizeObserver(draw).observe(chart);requestAnimationFrame(draw);
+  })();
+  &lt;/script&gt;
+&lt;/div&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (event) =&gt; {
+    for (const target of event.composedPath()) {
+      if (target?.nodeType === Node.ELEMENT_NODE) {
+        const trigger = target.closest(&quot;[data-tooltip]&quot;);
+        if (trigger) return trigger;
+      }
+    }
+    return null;
+  };
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handlers = {
+    pointerover: handlePointerOpen,
+    pointerdown: handlePointer,
+    pointercancel: handlePointer,
+    click: handleTouchClick,
+    pointerout: handleLeave,
+    focusin: handleFocusIn,
+    focusout: handleLeave,
+    keydown: handleKeyDown,
+    contextmenu: handleContextMenu,
+  };
+  const roots = new Map();
+  const handledEvents = new WeakSet();
+  const handleEvent = (event) =&gt; {
+    if (handledEvents.has(event)) return;
+    handledEvents.add(event);
+    handlers[event.type](event);
+  };
+  const discoverRoots = (node) =&gt; {
+    if (node.shadowRoot) listen(node.shadowRoot);
+    for (const element of node.querySelectorAll(&quot;*&quot;)) {
+      if (element.shadowRoot) listen(element.shadowRoot);
+    }
+  };
+  const listen = (root) =&gt; {
+    if (roots.has(root)) return;
+    for (const type of Object.keys(handlers)) root.addEventListener(type, handleEvent);
+    const observer = new window.MutationObserver((records) =&gt; {
+      for (const { addedNodes } of records) {
+        for (const node of addedNodes) {
+          if (node.nodeType === Node.ELEMENT_NODE) discoverRoots(node);
+        }
+      }
+      for (const [root, cleanup] of roots) {
+        if (root.host &amp;&amp; !root.host.isConnected) {
+          cleanup();
+          roots.delete(root);
+        }
+      }
+      if (activeTrigger &amp;&amp; !activeTrigger.isConnected) closeTooltip(false);
+    });
+    observer.observe(root, { childList: true, subtree: true });
+    roots.set(root, () =&gt; {
+      observer.disconnect();
+      for (const type of Object.keys(handlers)) root.removeEventListener(type, handleEvent);
+    });
+    discoverRoots(root);
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    for (const cleanup of roots.values()) cleanup();
+    roots.clear();
+    tooltip = null;
+  };
+
+  // Events between children of one shadow root never reach the document.
+  listen(document);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-carousel&quot;&gt;
+  (() =&gt; {
+    for (const root of document.querySelectorAll(&quot;.viz-carousel&quot;)) {
+      const panels = Array.from(
+        root.querySelectorAll(&quot;:scope &gt; [data-variant]&quot;),
+      );
+      if (panels.length === 0) {
+        continue;
+      }
+      root.setAttribute(&quot;role&quot;, &quot;group&quot;);
+      panels.forEach((panel, index) =&gt; {
+        panel.hidden = index !== 0;
+        panel.setAttribute(&quot;role&quot;, &quot;group&quot;);
+        if (!panel.hasAttribute(&quot;aria-label&quot;)) {
+          panel.setAttribute(&quot;aria-label&quot;, panel.dataset.variant);
+        }
+      });
+      root.dataset.activeVariant = panels[0].dataset.variant;
+      if (panels.length === 1) {
+        continue;
+      }
+
+      const controls = document.createElement(&quot;div&quot;);
+      controls.className = &quot;viz-carousel-controls&quot;;
+      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
+      // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
+      controls.innerHTML = `
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;details class=&quot;viz-carousel-picker&quot;&gt;
+        &lt;summary class=&quot;cursor-interaction&quot;&gt;
+          &lt;span class=&quot;viz-carousel-count tabular-nums&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;viz-carousel-name&quot;&gt;&lt;/span&gt;
+          &lt;svg class=&quot;viz-carousel-caret&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 20 21&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;path d=&quot;M15.2793 7.71101C15.539 7.45131 15.961 7.45131 16.2207 7.71101C16.4804 7.97071 16.4804 8.39272 16.2207 8.65242L10.4707 14.4024C10.211 14.6621 9.78902 14.6621 9.52932 14.4024L3.77932 8.65242L3.69436 8.54792C3.52385 8.28979 3.55205 7.93828 3.77932 7.71101C4.00659 7.48374 4.3581 7.45554 4.61623 7.62605L4.72073 7.71101L10 12.9903L15.2793 7.71101Z&quot; fill=&quot;currentColor&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;0.6&quot; /&gt;
+          &lt;/svg&gt;
+        &lt;/summary&gt;
+        &lt;div class=&quot;viz-carousel-options&quot;&gt;&lt;/div&gt;
+      &lt;/details&gt;
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-next cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;`;
+      const previous = controls.querySelector(&quot;.viz-carousel-previous&quot;);
+      const next = controls.querySelector(&quot;.viz-carousel-next&quot;);
+      const picker = controls.querySelector(&quot;.viz-carousel-picker&quot;);
+      const summary = picker.querySelector(&quot;summary&quot;);
+      const count = controls.querySelector(&quot;.viz-carousel-count&quot;);
+      const name = controls.querySelector(&quot;.viz-carousel-name&quot;);
+      const options = controls.querySelector(&quot;.viz-carousel-options&quot;);
+      const status = document.createElement(&quot;span&quot;);
+      status.className = &quot;sr-only&quot;;
+      status.setAttribute(&quot;role&quot;, &quot;status&quot;);
+      status.setAttribute(&quot;aria-live&quot;, &quot;polite&quot;);
+      status.setAttribute(&quot;aria-atomic&quot;, &quot;true&quot;);
+      previous.setAttribute(
+        &quot;aria-label&quot;,
+        root.dataset.previousLabel ?? &quot;Previous variant&quot;,
+      );
+      next.setAttribute(&quot;aria-label&quot;, root.dataset.nextLabel ?? &quot;Next variant&quot;);
+
+      let active = 0;
+      let mousePointerId = null;
+      let summaryPointerHandled = false;
+      summary.addEventListener(&quot;pointerdown&quot;, (event) =&gt; {
+        summaryPointerHandled =
+          event.pointerType === &quot;mouse&quot; &amp;&amp; event.button === 0 &amp;&amp; !event.ctrlKey;
+        if (!summaryPointerHandled) {
+          return;
+        }
+        event.preventDefault();
+        summary.focus({ preventScroll: true });
+        picker.open = !picker.open;
+        mousePointerId = picker.open ? event.pointerId : null;
+      });
+      summary.addEventListener(&quot;click&quot;, (event) =&gt; {
+        if (summaryPointerHandled &amp;&amp; event.detail &gt; 0) {
+          event.preventDefault();
+        }
+      });
+      const choices = panels.map((panel, index) =&gt; {
+        const choice = document.createElement(&quot;button&quot;);
+        choice.type = &quot;button&quot;;
+        choice.className = &quot;cursor-interaction&quot;;
+        choice.textContent = panel.dataset.variant;
+        choice.addEventListener(&quot;click&quot;, () =&gt; {
+          select(index);
+          summary.focus();
+        });
+        choice.addEventListener(&quot;pointerup&quot;, (event) =&gt; {
+          if (
+            picker.open &amp;&amp;
+            event.pointerType === &quot;mouse&quot; &amp;&amp;
+            event.button === 0 &amp;&amp;
+            event.pointerId === mousePointerId
+          ) {
+            choice.click();
+          }
+        });
+        options.appendChild(choice);
+        return choice;
+      });
+      const select = (index) =&gt; {
+        const changed = active !== index;
+        active = index;
+        panels.forEach((panel, position) =&gt; {
+          panel.hidden = position !== active;
+          choices[position].setAttribute(
+            &quot;aria-current&quot;,
+            String(position === active),
+          );
+        });
+        root.dataset.activeVariant = panels[active].dataset.variant;
+        count.textContent = `${active + 1} / ${panels.length}`;
+        name.textContent = panels[active].dataset.variant;
+        picker.open = false;
+        mousePointerId = null;
+        if (changed) {
+          status.textContent = `${count.textContent}: ${name.textContent}`;
+        }
+      };
+      previous.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + panels.length - 1) % panels.length),
+      );
+      next.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + 1) % panels.length),
+      );
+      picker.addEventListener(&quot;keydown&quot;, (event) =&gt; {
+        if (event.key === &quot;Escape&quot; &amp;&amp; picker.open) {
+          event.preventDefault();
+          picker.open = false;
+          mousePointerId = null;
+          summary.focus();
+          return;
+        }
+        if (event.altKey || event.ctrlKey || event.metaKey) {
+          return;
+        }
+        const index = choices.indexOf(document.activeElement);
+        let nextIndex;
+        if (event.key === &quot;ArrowDown&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + 1) % choices.length;
+        } else if (event.key === &quot;ArrowUp&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + choices.length - 1) % choices.length;
+        } else if (picker.open &amp;&amp; event.key === &quot;Home&quot;) {
+          nextIndex = 0;
+        } else if (picker.open &amp;&amp; event.key === &quot;End&quot;) {
+          nextIndex = choices.length - 1;
+        } else {
+          return;
+        }
+        event.preventDefault();
+        picker.open = true;
+        choices[nextIndex].focus();
+      });
+      picker.addEventListener(&quot;focusout&quot;, (event) =&gt; {
+        if (!picker.contains(event.relatedTarget)) {
+          picker.open = false;
+          mousePointerId = null;
+        }
+      });
+      const dismiss = (event) =&gt; {
+        if (!summary.contains(event.target)) {
+          mousePointerId = null;
+        }
+        if (!picker.contains(event.target)) {
+          picker.open = false;
+        }
+      };
+      const endPointerSelection = () =&gt; {
+        mousePointerId = null;
+      };
+      const sizePicker = () =&gt; {
+        root.style.setProperty(
+          &quot;--viz-carousel-picker-height&quot;,
+          `${picker.open ? options.offsetHeight : 0}px`,
+        );
+      };
+      picker.addEventListener(&quot;toggle&quot;, sizePicker);
+      window.addEventListener(&quot;resize&quot;, sizePicker);
+      document.addEventListener(&quot;pointerdown&quot;, dismiss);
+      document.addEventListener(&quot;pointerup&quot;, endPointerSelection);
+      document.addEventListener(&quot;pointercancel&quot;, endPointerSelection);
+      window.addEventListener(&quot;blur&quot;, endPointerSelection);
+      window.addEventListener(
+        &quot;pagehide&quot;,
+        () =&gt; {
+          document.removeEventListener(&quot;pointerdown&quot;, dismiss);
+          document.removeEventListener(&quot;pointerup&quot;, endPointerSelection);
+          document.removeEventListener(&quot;pointercancel&quot;, endPointerSelection);
+          window.removeEventListener(&quot;blur&quot;, endPointerSelection);
+          window.removeEventListener(&quot;resize&quot;, sizePicker);
+        },
+        { once: true },
+      );
+      root.append(controls, status);
+      select(0);
+    }
+  })();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+
+<script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  let viewportHeight = globalThis.innerHeight;
+  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
+    globalThis.location.pathname,
+    globalThis.location.search,
+  ])}`;
+  const parseState = (serializedState) => {
+    if (
+      typeof serializedState !== "string" ||
+      new TextEncoder().encode(serializedState).length > 16 * 1024
+    ) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    /** @type {unknown} */
+    const state = JSON.parse(serializedState);
+    if (
+      state == null ||
+      typeof state !== "object" ||
+      Array.isArray(state) ||
+      ("imageIds" in state &&
+        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
+    ) {
+      throw new TypeError("Widget state must be a JSON object");
+    }
+    const storedState = { modelContent: null, privateContent: null, ...state };
+    const canonicalState = JSON.stringify(
+      storedState,
+      (_key, /** @type {unknown} */ value) => {
+        if (typeof value === "number" && !Number.isFinite(value)) {
+          throw new TypeError("Widget state must contain finite numbers");
+        }
+        return value;
+      },
+    );
+    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    return storedState;
+  };
+  let storage = null;
+  let state = null;
+  try {
+    const localStorage = globalThis.localStorage;
+    const probeKey = `${storageKey}:probe`;
+    localStorage.setItem(probeKey, "1");
+    localStorage.removeItem(probeKey);
+    storage = localStorage;
+    const savedState = storage.getItem(storageKey);
+    if (savedState != null) {
+      try {
+        state = parseState(savedState);
+      } catch {
+        // Invalid saved state does not disable future writes.
+      }
+    }
+  } catch {
+    storage = null;
+  }
+  const initialGlobals = {
+    widgetState: state,
+    statePersistence: storage == null ? "none" : "local",
+  };
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "widget-state-write") {
+      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
+        return;
+      }
+      let ok = false;
+      try {
+        if (storage != null) {
+          const state = parseState(data.state);
+          storage.setItem(storageKey, JSON.stringify(state));
+          ok = true;
+        }
+      } catch {
+        // Storage denial, quota limits, and invalid state return a failed receipt.
+      }
+      channel.port1.postMessage({
+        type: "widget-state-result",
+        id: data.id,
+        ok,
+      });
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height === "number" &&
+        Number.isFinite(height) &&
+        height >= 0 &&
+        height <= 10_000
+      ) {
+        frame.style.height = Math.ceil(height) + "px";
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!Number.isFinite(height) || height <= viewportHeight) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  // Match the trusted bootstrap element, not the same text in an authored title.
+  frame.srcdoc = srcdoc.replace(
+    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
+    () =>
+      '<script type="application/json" id="codex-visualization-widget-state">' +
+      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
+      "<\/script>",
+  );
+  delete frame.dataset.srcdoc;
+})();
+</script>
+</body>
+</html>
